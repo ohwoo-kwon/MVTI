@@ -19,10 +19,9 @@ const routes = [
     component: Signup,
   },
   {
-    path: '/movies',
+    path: '/',
     name: 'Movies',
     component: Movies,
-    props: true,
   }
 ]
 

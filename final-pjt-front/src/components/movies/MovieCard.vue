@@ -32,5 +32,4 @@ export default {
   #card {
     margin: 1rem;
   }
-
 </style>

@@ -3,7 +3,7 @@
     <div class="container">
       <div id="logo-box">
         <img src="@/assets/logo.png/" alt="logo">
-        <router-link :to="{ name: 'Movies', params: { cMBTI: checkMBTI } }">MVTI</router-link>
+        <router-link :to="{ name: 'Movies'}">MVTI</router-link>
       </div>
       <div v-if="isLogin">
         <router-link to="#" @click.native="logout">Logout</router-link>
@@ -13,14 +13,6 @@
         <router-link :to="{ name: 'Signup' }">Signup</router-link>
       </div>
     </div>
-    <div>
-      <ul class="mbti-list">
-        <MBTI v-for="(mbti, index) in mbtis"
-        :key="index"
-        :mbti="mbti"
-        @show-mbti="showMbti" />
-      </ul>
-    </div>
     <div id="router-box">
       <router-view @login="isLogin = true"/>
     </div>
@@ -28,35 +20,12 @@
 </template>
 
 <script>
-import MBTI from './components/MBTI.vue'
 
 export default {
   name: 'App',
-  components: {
-    MBTI,
-  },
   data: function () {
     return {
       isLogin: false,
-      mbtis: [
-        'INTJ',
-        'INTP',
-        'ENTJ',
-        'ENTP',
-        'INFP',
-        'ENFP',
-        'INFJ',
-        'ENFJ',
-        'ISTJ',
-        'ISFJ',
-        'ESTJ',
-        'ESFJ',
-        'ISTP',
-        'ESTP',
-        'ISFP',
-        'ESFP'
-      ],
-      checkMBTI: [],
     }
   },
   methods: {
@@ -64,10 +33,6 @@ export default {
       this.isLogin = false
       localStorage.removeItem('jwt')
       this.$router.push('Login')
-    },
-    showMbti: function (mbti) {
-      this.checkMBTI.push(mbti)
-      // this.checkMBTI.map(mbti => console.log(mbti))
     },
   },
   created: function () {
@@ -123,14 +88,5 @@ export default {
   #logo-box {
     display: flex;
     align-items: center;
-  }
-
-  .mbti-list {
-    margin: 1rem;
-    padding: 0;
-    display: flex;
-    list-style: none;
-    flex-wrap: wrap;
-    justify-content: space-around;
   }
 </style>
