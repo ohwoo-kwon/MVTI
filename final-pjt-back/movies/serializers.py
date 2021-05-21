@@ -1,4 +1,5 @@
 from rest_framework import serializers
+from rest_framework.views import exception_handler
 from .models import Movie, Comment, MBTI
 
 class MovieCreateSerializer(serializers.ModelSerializer):
@@ -12,7 +13,7 @@ class CommentListSerialize(serializers.ModelSerializer):
     class Meta:
         model = Comment
         fields = '__all__'
-        read_only_fields = ('movie',)
+        read_only_fields = ('movie', 'user', 'username')
 
 class MBTISerializer(serializers.ModelSerializer):
 

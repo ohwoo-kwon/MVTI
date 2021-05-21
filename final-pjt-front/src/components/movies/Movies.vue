@@ -84,7 +84,7 @@ export default {
       this.showMovies = [...this.showMovies]
     },
     showMovies: function (showMovies) {
-      console.log(showMovies.length)
+      // console.log(showMovies.length)
       if (showMovies.length === 0) {
         this.showMovies = this.movies
       }
