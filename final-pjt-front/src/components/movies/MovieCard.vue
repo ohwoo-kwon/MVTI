@@ -1,8 +1,6 @@
 <template>
   <div id="card">
     <img :src="movie.poster_path" alt="movie_poster" style="width: 200px;" data-bs-toggle="modal" :data-bs-target="`#d${movie.id}`">
-
-    <!-- Modal -->
     <div class="modal fade" :id="`d${movie.id}`" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -46,7 +44,15 @@ export default {
   },
   data: function () {
     return {
-      movieDetail: null,
+      movieDetail: {
+        id: null,
+        comment_set: [],
+        mbti: [],
+        title: '',
+        overview: '',
+        poster_path: '',
+        movie_id: 1,
+      },
       inputText: null,
     }
   },
