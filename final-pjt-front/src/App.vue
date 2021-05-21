@@ -3,7 +3,7 @@
     <div class="container">
       <div id="logo-box">
         <img src="@/assets/logo.png/" alt="logo">
-        <router-link :to="{ name: 'Movies'}">MVTI</router-link>
+        <a :href="$router.resolve({name: 'Movies'}).href">MVTI</a>
       </div>
       <div v-if="isLogin">
         <router-link to="#" @click.native="logout">Logout</router-link>
@@ -14,7 +14,7 @@
       </div>
     </div>
     <div id="router-box">
-      <router-view @login="isLogin = true"/>
+      <router-view @login="isLogin = true" />
     </div>
   </div>
 </template>

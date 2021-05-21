@@ -23,9 +23,6 @@ export default {
     MovieCard,
     MBTI,
   },
-  props: {
-    MBTI: Object,
-  },
   data: function () {
     return {
       movies: null,
@@ -53,7 +50,12 @@ export default {
   },
   methods: {
     showMBTI: function (mbti) {
-      this.checkMBTI.push(mbti)
+      const index = this.checkMBTI.indexOf(mbti)
+      if (index === -1) {
+        this.checkMBTI.push(mbti)
+      } else {
+        this.checkMBTI.splice(index, 1)
+      }
     },
   },
   created: function () {
@@ -80,6 +82,12 @@ export default {
       })
       this.showMovies = new Set(this.showMovies)
       this.showMovies = [...this.showMovies]
+    },
+    showMovies: function (showMovies) {
+      console.log(showMovies.length)
+      if (showMovies.length === 0) {
+        this.showMovies = this.movies
+      }
     }
   }
 }
