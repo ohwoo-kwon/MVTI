@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="container">
+    <div class="logo-container">
       <div id="logo-box">
         <img src="@/assets/logo.png/" alt="logo">
         <a :href="$router.resolve({name: 'Movies'}).href">MVTI</a>
@@ -61,8 +61,11 @@ export default {
     text-decoration: none;
   }
 
-  .container {
+  .logo-container {
+    width: 100%;
     margin: 1rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -88,5 +91,9 @@ export default {
   #logo-box {
     display: flex;
     align-items: center;
+  }
+
+  a {
+    text-decoration: none;
   }
 </style>

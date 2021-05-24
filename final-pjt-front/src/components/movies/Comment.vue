@@ -2,7 +2,7 @@
   <li>
     {{ comment.content }}
     <span>-{{ comment.username }}</span>
-    <button @click="deleteComment">삭제</button>
+    <i class="fas fa-times" @click="deleteComment"></i>
   </li>
 </template>
 

@@ -44,18 +44,38 @@ export default {
         'ISFP',
         'ESFP'
       ],
-      checkMBTI: [],
+      checkMBTI: null,
       showMovies: null,
     }
   },
   methods: {
     showMBTI: function (mbti) {
-      const index = this.checkMBTI.indexOf(mbti)
-      if (index === -1) {
-        this.checkMBTI.push(mbti)
+      // const index = this.checkMBTI.indexOf(mbti)
+      // if (index === -1) {
+      //   this.checkMBTI.push(mbti)
+      // } else {
+      //   this.checkMBTI.splice(index, 1)
+      // }
+
+      if (this.checkMBTI === mbti) {
+        this.showMovies = this.movies
+        this.checkMBTI = null
       } else {
-        this.checkMBTI.splice(index, 1)
+        this.checkMBTI = mbti
       }
+
+      // 체크한 mbti만 돋보이게 하기
+      const mbtiList = document.querySelectorAll('.mbti-list > li')
+      // console.log(mbtiList)
+      mbtiList.forEach(mbti => {
+        // console.log(this.checkMBTI)
+        if (mbti.innerText === this.checkMBTI) {
+          mbti.setAttribute('style', 'font-size: 2rem;')
+          return
+        } else {
+          mbti.setAttribute('style', 'font-size: 1rem;')
+        }
+      })
     },
   },
   created: function () {
@@ -72,16 +92,19 @@ export default {
       })
   },
   watch: {
-    checkMBTI: function (mbti_list) {
+    checkMBTI: function (mbti) {
       this.showMovies = []
-      mbti_list.forEach(mbti => {
-        const result = this.movies.filter(movie => {
+      // mbti_list.forEach(mbti => {
+        // const result = this.movies.filter(movie => {
+        //   return movie.mbti.some(object => object.mbti == mbti)
+        // })
+        // this.showMovies = result.concat(this.showMovies)
+        // })
+        this.showMovies = this.movies.filter(movie => {
           return movie.mbti.some(object => object.mbti == mbti)
-        })
-        this.showMovies = this.showMovies.concat(result)
       })
-      this.showMovies = new Set(this.showMovies)
-      this.showMovies = [...this.showMovies]
+      // this.showMovies = new Set(this.showMovies)
+      // this.showMovies = [...this.showMovies]
     },
     showMovies: function (showMovies) {
       // console.log(showMovies.length)
@@ -102,11 +125,13 @@ export default {
 
   .mbti-list {
     width: 100%;
-    margin: 1rem;
+    height: 2rem;
+    margin-top: 1rem;
     padding: 0;
     display: flex;
     list-style: none;
     flex-wrap: wrap;
     justify-content: space-around;
+    line-height: 2rem;
   }
 </style>

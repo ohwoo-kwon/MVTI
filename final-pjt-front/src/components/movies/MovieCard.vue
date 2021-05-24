@@ -1,6 +1,7 @@
 <template>
   <div id="card">
     <img :src="movie.poster_path" alt="movie_poster" style="width: 200px;" data-bs-toggle="modal" :data-bs-target="`#d${movie.id}`">
+    <!-- Modal -->
     <div class="modal fade" :id="`d${movie.id}`" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -23,8 +24,8 @@
               />
             </ul>
             <div>
-              <input type="text" v-model="inputText" @keyup.enter="createComment">
-              <button @click="createComment">댓글달기</button>
+              <input type="text" v-model="inputText" @keyup.enter="createComment" placeholder="댓글 쓰기">
+              <!-- <i class="fas fa-plus" @click="createComment"></i> -->
             </div>
           </div>
         </div>
@@ -114,6 +115,13 @@ export default {
   #card {
     margin: 1rem;
     display: flex;
+    cursor: pointer;
+    border: 1px solid rgb(110, 110, 110, 0.3);
+    border-radius: 10px;
+  }
+
+  #card > img {
+    border-radius: 10px;
   }
 
   .movie-detail {
@@ -124,5 +132,15 @@ export default {
     display: -webkit-box;
     -webkit-line-clamp: 12;
     -webkit-box-orient: vertical;
+  }
+
+  .modal-content {
+    color:grey;
+    background: url('../../assets/detail-background3.png') no-repeat;
+    background-size: 500px 100%;
+  }
+
+  ul {
+    list-style: none;
   }
 </style>
