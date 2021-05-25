@@ -2,8 +2,9 @@
   <div>
     <div class="logo-container">
       <div id="logo-box">
-        <img src="@/assets/logo.png/" alt="logo">
-        <a :href="$router.resolve({name: 'Movies'}).href">MVTI</a>
+        <img src="@/assets/logo.png/" alt="logo" style="margin-right: 1rem;">
+        <a :href="$router.resolve({name: 'Movies'}).href"><img src="@/assets/MVTI2.png/" style="height: 30px; width: 170px;" alt="MVTI"></a>
+        <!-- <a :href="$router.resolve({name: 'Movies'}).href" style="font-family: 'Mate SC', serif; font-weight:bold; font-size: 1.7rem;">M V T I</a> -->
       </div>
       <div v-if="isLogin">
         <router-link to="#" @click.native="logout">Logout</router-link>
@@ -54,11 +55,14 @@ export default {
     color: red;
     margin: 0;
     height: 100vh;
+    background: url(https://cdn.wallpapersafari.com/14/55/DRKqGr.jpg);
+
   }
 
   a {
     color: red;
     text-decoration: none;
+    font-family: 'Pattaya', sans-serif;
   }
 
   .logo-container {
