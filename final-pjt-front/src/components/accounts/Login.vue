@@ -30,6 +30,7 @@ export default {
       axios({
         method: 'post',
         url: 'http://127.0.0.1:8000/accounts/api-token-auth/',
+        // url: 'https://upmygrade.shop/accounts/api-token-auth/',
         data: this.credentials,
       })
         .then(res => {
@@ -38,8 +39,8 @@ export default {
           this.$emit('login')
           this.$router.push('/')
         })
-        .catch(err => {
-          console.log(err)
+        .catch(() => {
+          alert('usename 혹은 password 가 틀렸습니다.')
         })
     }
   }

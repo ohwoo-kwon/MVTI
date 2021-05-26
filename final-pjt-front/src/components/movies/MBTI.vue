@@ -19,7 +19,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
   li {
     caret-color: none;
     cursor: pointer;
@@ -28,7 +28,7 @@ export default {
   }
 
   li:hover {
-    transform: scale(2);
+    transform: translate(0, -10px);
   }
 
   #INTJ {

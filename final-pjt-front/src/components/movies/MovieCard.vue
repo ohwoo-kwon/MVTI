@@ -71,7 +71,8 @@ export default {
       }
       axios({
         method: 'post',
-        url: `http://127.0.0.1:8000/movies/${this.movie.movie_id}/comment/`,
+        url: `http://127.0.0.1:8000/${this.movie.movie_id}/comment/`,
+        // url: `https://upmygrade.shop/${this.movie.movie_id}/comment/`,
         data,
         headers,
       })
@@ -87,6 +88,7 @@ export default {
       axios({
       method: 'get',
       url: `http://127.0.0.1:8000/movies/${this.movie.movie_id}/`
+      // url: `https://upmygrade.shop/movies/${this.movie.movie_id}/`
     })
       .then(res => {
         this.movieDetail = res.data
@@ -100,6 +102,7 @@ export default {
     axios({
       method: 'get',
       url: `http://127.0.0.1:8000/movies/${this.movie.movie_id}/`
+      // url: `https://upmygrade.shop/movies/${this.movie.movie_id}/`
     })
       .then(res => {
         this.movieDetail = res.data
@@ -127,6 +130,7 @@ export default {
 
   #card > img:hover {
     transform: scale(1.1);
+    border: 1px solid rgb(110, 110, 110, 0.3);
   }
 
   .movie-detail {

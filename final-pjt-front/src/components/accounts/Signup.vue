@@ -32,18 +32,27 @@ export default {
   },
   methods: {
     signup: function () {
-      axios({
-        method: 'post',
-        url: 'http://127.0.0.1:8000/accounts/signup/',
-        data: this.credentials,
-      })
-        .then(() => {
-          // console.log(res)
-          this.$router.push({name:'Login'})
+      // const username = this.credentials.username
+      const password = this.credentials.password
+      const passwordConfirmation = this.credentials.passwordConfirmation
+
+      if (password !== passwordConfirmation) {
+        alert('비밀번호와 비밀번호 확인이 일치하지 않습니다.')
+      } else {
+        axios({
+          method: 'post',
+          url: 'http://127.0.0.1:8000/accounts/signup/',
+          // url: 'https://upmygrade.shop/accounts/signup/',
+          data: this.credentials,
         })
-        .catch(err => {
-          console.log(err)
-        })
+          .then(() => {
+            // console.log(res)
+            this.$router.push({name:'Login'})
+          })
+          .catch(() => {
+            alert('이미 사용 중인 아이디이거나, 아이디에 공백이 있습니다.')
+          })
+      }
     },
   }
 }

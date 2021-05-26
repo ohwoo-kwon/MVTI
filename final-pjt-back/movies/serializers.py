@@ -1,12 +1,17 @@
 from rest_framework import serializers
 from rest_framework.views import exception_handler
 from .models import Movie, Comment, MBTI
+from django.core.serializers.json import *
 
 class MovieCreateSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Movie
         fields = '__all__'
+    
+    def _init_options(self):
+        super(Serializer, self)._init_options()
+        self.json_kwargs['ensure_ascii'] = False
 
 class CommentListSerialize(serializers.ModelSerializer):
 
@@ -28,3 +33,7 @@ class MovieDetail(serializers.ModelSerializer):
     class Meta:
         model = Movie
         fields = '__all__'
+    
+    def _init_options(self):
+        super(Serializer, self)._init_options()
+        self.json_kwargs['ensure_ascii'] = False

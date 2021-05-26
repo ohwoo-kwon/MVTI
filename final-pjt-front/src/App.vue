@@ -56,7 +56,6 @@ export default {
     margin: 0;
     height: 100vh;
     background: url(https://cdn.wallpapersafari.com/14/55/DRKqGr.jpg);
-
   }
 
   a {

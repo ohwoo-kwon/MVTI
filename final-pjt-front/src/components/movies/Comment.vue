@@ -23,6 +23,7 @@ export default {
       axios({
         method: 'delete',
         url: `http://127.0.0.1:8000/movies/comment/${this.comment.id}/`,
+        // url: `https://upmygrade.shop/movies/comment/${this.comment.id}/`,
         headers,
       })
         .then(() => {

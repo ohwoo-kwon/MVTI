@@ -1,5 +1,10 @@
 <template>
   <div class="movie-list">
+    <div id="fly-in">
+      <div>
+        <span>캐릭터 MBTI 별</span>영화 추천
+      </div>
+    </div>
     <ul class="mbti-list">
       <MBTI v-for="(mbti, index) in mbtis"
       :key="index"
@@ -7,11 +12,11 @@
       @show-mbti="showMBTI" />
     </ul>
     <div id="image-slide">
-
-      <div v-show="checkMBTI === 'INTJ'" style="color: rgb(254, 148, 48);">
-        <p style="font-family: 'Black And White Picture', sans-serif; font-size:2rem;">용의주도한 전략가 / 과학자형</p>
-        <p style="font-family: 'East Sea Dokdo', cursive; font-size:1.7rem;">전체적인 부분을 조합하여 비전을 제시하는 사람들</p>
-        <p style="font-family: 'East Sea Dokdo', cursive; font-size:1.7rem;">대부분 똑똑하고 신념이 뚜렷해서 악역이 많음</p>
+      <hr style="color: white;">
+      <div class="mbti" v-show="checkMBTI === 'INTJ'" style="color: rgb(254, 148, 48);">
+        <p id="mbti-title">용의주도한 전략가 / 과학자형</p>
+        <p id="mbti-content">전체적인 부분을 조합하여 비전을 제시하는 사람들</p>
+        <p id="mbti-content">대부분 똑똑하고 신념이 뚜렷해서 악역이 많음</p>
         <carousel-3d v-show="checkMBTI === 'INTJ'">
           <slide :index="0">
             <img src="../../assets/INTJ/1.jpg" alt="">
@@ -59,12 +64,12 @@
             <img src="../../assets/INTJ/15.jpg" alt="">
           </slide>
         </carousel-3d>
-      </div>
+      <hr style="color: white;"></div>
 
-      <div v-show="checkMBTI === 'INTP'" style="color: rgb(252, 54, 69);">
-        <p style="font-family: 'Black And White Picture', sans-serif; font-size:2rem;">논리적인 사색가 / 아이디어 뱅크형</p>
-        <p style="font-family: 'East Sea Dokdo', cursive; font-size:1.7rem;">비평적인 관점을 가지고 있는 뛰어난 전략가들</p>
-        <p style="font-family: 'East Sea Dokdo', cursive; font-size:1.7rem;">수줍은 천재, 까칠한 천재, 비운의 천재 등등 천제 집합체</p>
+      <div class="mbti" v-show="checkMBTI === 'INTP'" style="color: rgb(252, 54, 69);">
+        <p id="mbti-title">논리적인 사색가 / 아이디어 뱅크형</p>
+        <p id="mbti-content">비평적인 관점을 가지고 있는 뛰어난 전략가들</p>
+        <p id="mbti-content">수줍은 천재, 까칠한 천재, 비운의 천재 등등 천제 집합체</p>
         <carousel-3d v-show="checkMBTI === 'INTP'">
           <slide :index="0">
             <img src="../../assets/INTP/1.jpg" alt="">
@@ -115,12 +120,12 @@
             <img src="../../assets/INTP/16.jpg" alt="">
           </slide>
         </carousel-3d>
-      </div>
+      <hr style="color: white;"></div>
       
-      <div v-show="checkMBTI === 'ENTJ'" style="color: rgb(202, 124, 42);">
-        <p style="font-family: 'Black And White Picture', sans-serif; font-size:2rem;">대담한 통솔자 / 지도자형</p>
-        <p style="font-family: 'East Sea Dokdo', cursive; font-size:1.7rem;">비전을 가지고 사람들을 활력적으로 이끄는 사람들</p>
-        <p style="font-family: 'East Sea Dokdo', cursive; font-size:1.7rem;">무조건 쎄고 치명적이며 항상 리드함</p>
+      <div class="mbti" v-show="checkMBTI === 'ENTJ'" style="color: rgb(202, 124, 42);">
+        <p id="mbti-title">대담한 통솔자 / 지도자형</p>
+        <p id="mbti-content">비전을 가지고 사람들을 활력적으로 이끄는 사람들</p>
+        <p id="mbti-content">무조건 쎄고 치명적이며 항상 리드함</p>
         <carousel-3d v-show="checkMBTI === 'ENTJ'">
           <slide :index="0">
             <img src="../../assets/ENTJ/1.jpg" alt="">
@@ -174,12 +179,12 @@
             <img src="../../assets/ENTJ/17.jpg" alt="">
           </slide>
         </carousel-3d>
-      </div>
+      <hr style="color: white;"></div>
 
-      <div v-show="checkMBTI === 'ENTP'" style="color: rgb(252, 0, 23);">
-        <p style="font-family: 'Black And White Picture', sans-serif; font-size:2rem;">뜨거운 논쟁을 즐기는 변론가 / 발명가형</p>
-        <p style="font-family: 'East Sea Dokdo', cursive; font-size:1.7rem;">풍부한 상상력은 가지고 새로운 것에 도전하는 사람들</p>
-        <p style="font-family: 'East Sea Dokdo', cursive; font-size:1.7rem;">수줍은 또라이, 까칠한 또라이, 비운의 또라이 등등 또라이 집합체</p>
+      <div class="mbti" v-show="checkMBTI === 'ENTP'" style="color: rgb(252, 0, 23);">
+        <p id="mbti-title">뜨거운 논쟁을 즐기는 변론가 / 발명가형</p>
+        <p id="mbti-content">풍부한 상상력은 가지고 새로운 것에 도전하는 사람들</p>
+        <p id="mbti-content">수줍은 또라이, 까칠한 또라이, 비운의 또라이 등등 또라이 집합체</p>
         <carousel-3d v-show="checkMBTI === 'ENTP'">
           <slide :index="0">
             <img src="../../assets/ENTP/1.jpg" alt="">
@@ -233,12 +238,12 @@
             <img src="../../assets/ENTP/17.jpg" alt="">
           </slide>
         </carousel-3d>
-      </div>
+      <hr style="color: white;"></div>
 
-      <div v-show="checkMBTI === 'INFP'" style="color: rgb(254, 190, 191);">
-        <p style="font-family: 'Black And White Picture', sans-serif; font-size:2rem;">열정적인 중재자 / 잔다르크형</p>
-        <p style="font-family: 'East Sea Dokdo', cursive; font-size:1.7rem;">이상적인 세상을 만들어 가는 사람들</p>
-        <p style="font-family: 'East Sea Dokdo', cursive; font-size:1.7rem;">감성적인 영화에 나오는 외유내강형 캐릭터</p>
+      <div class="mbti" v-show="checkMBTI === 'INFP'" style="color: rgb(254, 190, 191);">
+        <p id="mbti-title">열정적인 중재자 / 잔다르크형</p>
+        <p id="mbti-content">이상적인 세상을 만들어 가는 사람들</p>
+        <p id="mbti-content">감성적인 영화에 나오는 외유내강형 캐릭터</p>
         <carousel-3d v-show="checkMBTI === 'INFP'">
           <slide :index="0">
             <img src="../../assets/INFP/1.jpg" alt="">
@@ -287,12 +292,12 @@
           </slide>
         </carousel-3d>
 
-      </div>
+      <hr style="color: white;"></div>
 
-      <div v-show="checkMBTI === 'ENFP'" style="color: rgb(254, 125, 130);">
-        <p style="font-family: 'Black And White Picture', sans-serif; font-size:2rem;">재기발랄한 활동가 / 스파크형</p>
-        <p style="font-family: 'East Sea Dokdo', cursive; font-size:1.7rem;">열정적으로 새로운 관계를 만드는 사람들</p>
-        <p style="font-family: 'East Sea Dokdo', cursive; font-size:1.7rem;">명랑한 캐릭터들, 코미디에 자주 등장</p>
+      <div class="mbti" v-show="checkMBTI === 'ENFP'" style="color: rgb(254, 125, 130);">
+        <p id="mbti-title">재기발랄한 활동가 / 스파크형</p>
+        <p id="mbti-content">열정적으로 새로운 관계를 만드는 사람들</p>
+        <p id="mbti-content">명랑한 캐릭터들, 코미디에 자주 등장</p>
         <carousel-3d v-show="checkMBTI === 'ENFP'">
           <slide :index="0">
             <img src="../../assets/ENFP/1.jpg" alt="">
@@ -346,12 +351,12 @@
             <img src="../../assets/ENFP/17.jpg" alt="">
           </slide>
         </carousel-3d>
-      </div>
+      <hr style="color: white;"></div>
 
-      <div v-show="checkMBTI === 'INFJ'" style="color: rgb(255, 201, 137);">
-        <p style="font-family: 'Black And White Picture', sans-serif; font-size:2rem;">선의의 옹호자 / 예언자형</p>
-        <p style="font-family: 'East Sea Dokdo', cursive; font-size:1.7rem;">사람과 관련된 뛰어난 통찰력을 가진 사람들</p>
-        <p style="font-family: 'East Sea Dokdo', cursive; font-size:1.7rem;">묘한 능력이 있는 캐릭터, 조력자로 자주 등장</p>
+      <div class="mbti" v-show="checkMBTI === 'INFJ'" style="color: rgb(255, 201, 137);">
+        <p id="mbti-title">선의의 옹호자 / 예언자형</p>
+        <p id="mbti-content">사람과 관련된 뛰어난 통찰력을 가진 사람들</p>
+        <p id="mbti-content">묘한 능력이 있는 캐릭터, 조력자로 자주 등장</p>
         <carousel-3d v-show="checkMBTI === 'INFJ'">
           <slide :index="0">
             <img src="../../assets/INFJ/1.jpg" alt="">
@@ -411,12 +416,12 @@
             <img src="../../assets/INFJ/19.jpg" alt="">
           </slide>
         </carousel-3d>
-      </div>
+      <hr style="color: white;"></div>
 
-      <div v-show="checkMBTI === 'ENFJ'" style="color: rgb(254, 175, 82);">
-        <p style="font-family: 'Black And White Picture', sans-serif; font-size:2rem;">정의로운 사회운동가 / 언변능숙형</p>
-        <p style="font-family: 'East Sea Dokdo', cursive; font-size:1.7rem;">타인의 성장을 도모하고 협동하는 사람들</p>
-        <p style="font-family: 'East Sea Dokdo', cursive; font-size:1.7rem;">명랑한 분위기를 가졌으나 조금 차분하고 목표지향적</p>
+      <div class="mbti" v-show="checkMBTI === 'ENFJ'" style="color: rgb(254, 175, 82);">
+        <p id="mbti-title">정의로운 사회운동가 / 언변능숙형</p>
+        <p id="mbti-content">타인의 성장을 도모하고 협동하는 사람들</p>
+        <p id="mbti-content">명랑한 분위기를 가졌으나 조금 차분하고 목표지향적</p>
         <carousel-3d v-show="checkMBTI === 'ENFJ'">
           <slide :index="0">
             <img src="../../assets/ENFJ/1.jpg" alt="">
@@ -461,12 +466,12 @@
             <img src="../../assets/ENFJ/14.jpg" alt="">
           </slide>
         </carousel-3d>
-      </div>
+      <hr style="color: white;"></div>
 
-      <div v-show="checkMBTI === 'ISTJ'" style="color: rgb(42, 101, 45);">
-        <p style="font-family: 'Black And White Picture', sans-serif; font-size:2rem;">청렴결백한 논리주의자 / 세상의 소금형</p>
-        <p style="font-family: 'East Sea Dokdo', cursive; font-size:1.7rem;">한번 시작한 일은 끝까지 해내는 사람</p>
-        <p style="font-family: 'East Sea Dokdo', cursive; font-size:1.7rem;">진지한 모범생형 캐릭터</p>
+      <div class="mbti" v-show="checkMBTI === 'ISTJ'" style="color: rgb(42, 101, 45);">
+        <p id="mbti-title">청렴결백한 논리주의자 / 세상의 소금형</p>
+        <p id="mbti-content">한번 시작한 일은 끝까지 해내는 사람</p>
+        <p id="mbti-content">진지한 모범생형 캐릭터</p>
         <carousel-3d v-show="checkMBTI === 'ISTJ'">
           <slide :index="0">
             <img src="../../assets/ISTJ/1.jpg" alt="">
@@ -523,12 +528,12 @@
             <img src="../../assets/ISTJ/18.jpg" alt="">
           </slide>
         </carousel-3d>
-      </div>
+      <hr style="color: white;"></div>
       
-      <div v-show="checkMBTI === 'ISFJ'" style="color: rgb(107, 222, 65);">
-        <p style="font-family: 'Black And White Picture', sans-serif; font-size:2rem;">용감한 수호자 / 임금 뒷편의 권력형</p>
-        <p style="font-family: 'East Sea Dokdo', cursive; font-size:1.7rem;">성실하고 온화하며 협조를 잘하는 사람들</p>
-        <p style="font-family: 'East Sea Dokdo', cursive; font-size:1.7rem;">정직하게 착한 캐릭터들이 많음</p>
+      <div class="mbti" v-show="checkMBTI === 'ISFJ'" style="color: rgb(107, 222, 65);">
+        <p id="mbti-title">용감한 수호자 / 임금 뒷편의 권력형</p>
+        <p id="mbti-content">성실하고 온화하며 협조를 잘하는 사람들</p>
+        <p id="mbti-content">정직하게 착한 캐릭터들이 많음</p>
         <carousel-3d v-show="checkMBTI === 'ISFJ'">
           <slide :index="0">
             <img src="../../assets/ISFJ/1.jpg" alt="">
@@ -585,12 +590,12 @@
             <img src="../../assets/ISFJ/18.jpg" alt="">
           </slide>
         </carousel-3d>
-      </div>
+      <hr style="color: white;"></div>
 
-      <div v-show="checkMBTI === 'ESTJ'" style="color: rgb(48, 72, 48);">
-        <p style="font-family: 'Black And White Picture', sans-serif; font-size:2rem;">엄격한 관리자 / 사업가형</p>
-        <p style="font-family: 'East Sea Dokdo', cursive; font-size:1.7rem;">사무적, 실용적, 현실도모적인 일을 많이 하는 사람</p>
-        <p style="font-family: 'East Sea Dokdo', cursive; font-size:1.7rem;">보통 엄청난 능력자</p>
+      <div class="mbti" v-show="checkMBTI === 'ESTJ'" style="color: rgb(48, 72, 48);">
+        <p id="mbti-title">엄격한 관리자 / 사업가형</p>
+        <p id="mbti-content">사무적, 실용적, 현실도모적인 일을 많이 하는 사람</p>
+        <p id="mbti-content">보통 엄청난 능력자</p>
         <carousel-3d v-show="checkMBTI === 'ESTJ'">
           <slide :index="0">
             <img src="../../assets/ESTJ/1.jpg" alt="">
@@ -644,12 +649,12 @@
             <img src="../../assets/ESTJ/17.jpg" alt="">
           </slide>
         </carousel-3d>
-      </div>
+      <hr style="color: white;"></div>
 
-      <div v-show="checkMBTI === 'ESFJ'" style="color: rgb(84, 152, 49);">
-        <p style="font-family: 'Black And White Picture', sans-serif; font-size:2rem;">사교적인 외교관 / 친선도모형</p>
-        <p style="font-family: 'East Sea Dokdo', cursive; font-size:1.7rem;">친절과 현실감을 바탕으로 타인에게 봉사하는 사람들</p>
-        <p style="font-family: 'East Sea Dokdo', cursive; font-size:1.7rem;">능력치 골고루 발달한 전교회장 느낌</p>
+      <div class="mbti" v-show="checkMBTI === 'ESFJ'" style="color: rgb(84, 152, 49);">
+        <p id="mbti-title">사교적인 외교관 / 친선도모형</p>
+        <p id="mbti-content">친절과 현실감을 바탕으로 타인에게 봉사하는 사람들</p>
+        <p id="mbti-content">능력치 골고루 발달한 전교회장 느낌</p>
         <carousel-3d v-show="checkMBTI === 'ESFJ'">
           <slide :index="0">
             <img src="../../assets/ESFJ/1.jpg" alt="">
@@ -697,12 +702,12 @@
             <img src="../../assets/ESFJ/15.jpg" alt="">
           </slide>
         </carousel-3d>
-      </div>
+      <hr style="color: white;"></div>
 
-      <div v-show="checkMBTI === 'ISTP'" style="color: rgb(48, 84, 243);">
-        <p style="font-family: 'Black And White Picture', sans-serif; font-size:2rem;">만능 재주꾼 / 백과사전형</p>
-        <p style="font-family: 'East Sea Dokdo', cursive; font-size:1.7rem;">논리적이고 뛰어난 적응력을 가진 사람들</p>
-        <p style="font-family: 'East Sea Dokdo', cursive; font-size:1.7rem;">액션영화 주인공이 엄청 과묵하고 엄청 멋있음</p>
+      <div class="mbti" v-show="checkMBTI === 'ISTP'" style="color: rgb(48, 84, 243);">
+        <p id="mbti-title">만능 재주꾼 / 백과사전형</p>
+        <p id="mbti-content">논리적이고 뛰어난 적응력을 가진 사람들</p>
+        <p id="mbti-content">액션영화 주인공이 엄청 과묵하고 엄청 멋있음</p>
         <carousel-3d v-show="checkMBTI === 'ISTP'">
           <slide :index="0">
             <img src="../../assets/ISTP/1.jpg" alt="">
@@ -762,12 +767,12 @@
             <img src="../../assets/ISTP/19.jpg" alt="">
           </slide>
         </carousel-3d>
-      </div>
+      <hr style="color: white;"></div>
 
-      <div v-show="checkMBTI === 'ESTP'" style="color: rgb(0, 53, 247);">
-        <p style="font-family: 'Black And White Picture', sans-serif; font-size:2rem;">모험을 즐기는 사업가 / 수완 좋은 활동가형</p>
-        <p style="font-family: 'East Sea Dokdo', cursive; font-size:1.7rem;">친구, 운동, 음식 등 다양한 활동을 선호하는 사람들</p>
-        <p style="font-family: 'East Sea Dokdo', cursive; font-size:1.7rem;">매력적인 캐릭터들</p>
+      <div class="mbti" v-show="checkMBTI === 'ESTP'" style="color: rgb(0, 53, 247);">
+        <p id="mbti-title">모험을 즐기는 사업가 / 수완 좋은 활동가형</p>
+        <p id="mbti-content">친구, 운동, 음식 등 다양한 활동을 선호하는 사람들</p>
+        <p id="mbti-content">매력적인 캐릭터들</p>
         <carousel-3d v-show="checkMBTI === 'ESTP'">
           <slide :index="0">
             <img src="../../assets/ESTP/1.jpg" alt="">
@@ -833,12 +838,12 @@
             <img src="../../assets/ESTP/21.jpg" alt="">
           </slide>
         </carousel-3d>
-      </div>
+      <hr style="color: white;"></div>
 
-      <div v-show="checkMBTI === 'ISFP'" style="color: rgb(189, 194, 250);">
-        <p style="font-family: 'Black And White Picture', sans-serif; font-size:2rem;">호기심 많은 예술가 / 성인군자형</p>
-        <p style="font-family: 'East Sea Dokdo', cursive; font-size:1.7rem;">따뜻한 감성을 가지고 있는 겸손한 사람들</p>
-        <p style="font-family: 'East Sea Dokdo', cursive; font-size:1.7rem;">성장물의 주인공으로 쓰기에 가장 적합한 유형</p>
+      <div class="mbti" v-show="checkMBTI === 'ISFP'" style="color: rgb(189, 194, 250);">
+        <p id="mbti-title">호기심 많은 예술가 / 성인군자형</p>
+        <p id="mbti-content">따뜻한 감성을 가지고 있는 겸손한 사람들</p>
+        <p id="mbti-content">성장물의 주인공으로 쓰기에 가장 적합한 유형</p>
         <carousel-3d v-show="checkMBTI === 'ISFP'">
           <slide :index="0">
             <img src="../../assets/ISFP/1.jpg" alt="">
@@ -889,12 +894,12 @@
             <img src="../../assets/ISFP/16.jpg" alt="">
           </slide>
         </carousel-3d>
-      </div>
+      <hr style="color: white;"></div>
 
-      <div v-show="checkMBTI === 'ESFP'" style="color: rgb(123, 134, 249);">
-        <p style="font-family: 'Black And White Picture', sans-serif; font-size:2rem;">자유로운 영혼의 연예인 / 사교적인 유형</p>
-        <p style="font-family: 'East Sea Dokdo', cursive; font-size:1.7rem;">분위기를 고조시키는 우호적인 사람들</p>
-        <p style="font-family: 'East Sea Dokdo', cursive; font-size:1.7rem;">에너지 넘치는 캐릭터들</p>
+      <div class="mbti" v-show="checkMBTI === 'ESFP'" style="color: rgb(123, 134, 249);">
+        <p id="mbti-title">자유로운 영혼의 연예인 / 사교적인 유형</p>
+        <p id="mbti-content">분위기를 고조시키는 우호적인 사람들</p>
+        <p id="mbti-content">에너지 넘치는 캐릭터들</p>
         <carousel-3d v-show="checkMBTI === 'ESFP'">
           <slide :index="0">
             <img src="../../assets/ESFP/1.jpg" alt="">
@@ -954,8 +959,10 @@
             <img src="../../assets/ESFP/19.jpg" alt="">
           </slide>
         </carousel-3d>
-      </div>
+      <hr style="color: white;"></div>
 
+    <p v-if="this.checkMBTI" id="mbti-title"><span :id="`${this.checkMBTI}`">{{this.checkMBTI}}</span> 캐릭터가 나온 영화 추천</p>
+    <p v-else id="mbti-title">전체 영화</p>
     </div>
     <MovieCard v-for="(movie, index) in showMovies"
     :key="index"
@@ -1036,6 +1043,7 @@ export default {
     axios({
       method: 'get',
       url: 'http://127.0.0.1:8000/movies/'
+      // url: 'https://upmygrade.shop/movies/'
     })
       .then(res => {
         this.movies = res.data
@@ -1097,10 +1105,12 @@ export default {
   #image-slide img {
     width: 210px;
     height: 280px;
+    object-fit: fill;
   }
 
   .carousel-3d-container {
     height: 280px !important;
+    margin-top: 2rem !important;
   }
 
   .carousel-3d-slider {
@@ -1115,5 +1125,68 @@ export default {
     border-radius: 4px;
   }
 
+  #mbti-title {
+    font-family: 'Nanum Gothic', sans-serif;
+    font: 700 2rem "Oswald", sans-serif;
+    letter-spacing: 0;
+    padding: 0.25em 0 0.325em;
+    display: block;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 80px rgba(255, 255, 255, 0.5);
+    /* Clip Background Image */
+    background: url(https://i.ibb.co/RDTnNrT/animated-text-fill.png) repeat-y;
+    -webkit-background-clip: text;
+    background-clip: text;
+    /* Animate Background Image */
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: aitf 80s linear infinite;
+    /* Activate hardware acceleration for smoother animations */
+    -webkit-transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+  }
 
+  @-webkit-keyframes aitf {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }	
+
+  #mbti-content {
+    font-family: 'Nanum Gothic Coding', monospace;
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  #fly-in {
+    font-size: 4em;
+    color: whitesmoke;
+    /* font-family: 'Nanum Gothic Coding', monospace; */
+    font-weight: bolder;
+    font-family: 'Nanum Gothic', sans-serif;
+  }
+
+  #fly-in span {
+    display: block;
+    font-size: .4em;
+    opacity: .8;
+  }
+
+  #fly-in div {
+    /* position: fixed; */
+    margin: 2vh 0;
+    opacity: 0;
+    /* left: 10vw;
+    width: 80vw; */
+    animation: switch 8s linear infinite;
+  }
+
+  @keyframes switch {
+      0% { opacity: 0;filter: blur(20px); transform:scale(1)}
+      30% { opacity: 1;filter: blur(0); transform:scale(1)}
+      40% { opacity: 1;filter: blur(0); transform:scale(1)}
+      70% { opacity: 0 }
+  }
 </style>
