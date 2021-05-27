@@ -84,7 +84,7 @@
 
 ​			iv. Vue.js를 활용하는 경우에도 Django admin기능을 이용하여 구현할 수 있습니다
 
-![](Final - Project.assets/admin.JPG)			
+![](Final-Project.assets/admin.JPG)			
 
 ​	<span style="color:RED">B</span>. 영화 정보 
 
@@ -92,7 +92,7 @@
 
 ​		 ii. 모든 로그인 된 유저는 영화에 대한 평점 등록 / 수정 / 삭제 등을 할 수 있 어야 합니다.
 
-![](Final - Project.assets/allmovies.JPG)			
+![](Final-Project.assets/allmovies.JPG)			
 
 ​	<span style="color:RED">C</span>. 추천 알고리즘 
 
@@ -106,7 +106,7 @@
 
 ​		 	추천 시스템을 구성 했는지 설명할 수 있어야 합니다.
 
-![](Final - Project.assets/Honeycam 2021-05-27 10-51-48.gif)
+![](Final-Project.assets/Honeycam 2021-05-27 10-51-48.gif)
 
 ​		<span style="color:RED">D</span>. 커뮤니티 
 
@@ -130,9 +130,9 @@ class Comment(models.Model):
 
 
 
-![](Final - Project.assets/Honeycam 2021-05-27 10-19-34.gif)
+![](Final-Project.assets/Honeycam 2021-05-27 10-19-34.gif)
 
-![](Final - Project.assets/Honeycam 2021-05-27 10-19-55.gif)
+![](Final-Project.assets/Honeycam 2021-05-27 10-19-55.gif)
 
 ​	<span style="color:RED">E</span>. 기타 
 
@@ -144,7 +144,7 @@ class Comment(models.Model):
 
 ​			 iii. 필요한 경우 Ajax를 활용한 비동기 요청을 통해 사용자 경험을 적절하게 향상 시켜야 합니다.
 
-![](Final - Project.assets/Honeycam 2021-05-27 10-36-44.gif)
+![](Final-Project.assets/Honeycam 2021-05-27 10-36-44.gif)
 
 
 
@@ -160,7 +160,7 @@ class Comment(models.Model):
 
  🔴 데이터베이스 모델링(ERD) 
 
-​	![](Final - Project.assets/erd.JPG)
+​	![](Final-Project.assets/erd.JPG)
 
  🔴 목표 서비스 구현 및 실제 구현 정도
 
@@ -168,11 +168,11 @@ class Comment(models.Model):
 
 ​		또한 그들이 등장한 영화들을 추천해주는 사이트입니다.
 
-![](Final - Project.assets/[ㅇㅇ]2.JPG)
+![](Final-Project.assets/[ㅇㅇ]2.JPG)
 
-![](Final - Project.assets/[ㅇㅇ]-1622081022587.JPG)
+![](Final-Project.assets/[ㅇㅇ]-1622081022587.JPG)
 
-![](Final - Project.assets/[ㅇㅇ]3.JPG)
+![](Final-Project.assets/[ㅇㅇ]3.JPG)
 
 🔴 배포 서버 URL 
 
