@@ -1,6 +1,6 @@
 <template>
   <div id="card">
-    <img :src="movie.poster_path" alt="movie_poster" style="width: 200px;" data-bs-toggle="modal" :data-bs-target="`#d${movie.id}`">
+    <img @click="getDetail()" :src="movie.poster_path" alt="movie_poster" style="width: 200px;" data-bs-toggle="modal" :data-bs-target="`#d${movie.id}`">
     <!-- Modal -->
     <div class="modal fade" :id="`d${movie.id}`" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
@@ -71,7 +71,7 @@ export default {
       }
       axios({
         method: 'post',
-        url: `http://127.0.0.1:8000/${this.movie.movie_id}/comment/`,
+        url: `http://127.0.0.1:8000/movies/${this.movie.movie_id}/comment/`,
         // url: `https://upmygrade.shop/${this.movie.movie_id}/comment/`,
         data,
         headers,
